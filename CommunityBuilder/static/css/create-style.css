@@ -1,0 +1,84 @@
+.title {
+  font-size: 30px;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+.event-pane {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 20px;
+  margin: 40px;
+  align-items: baseline;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  width: 300px;
+}
+
+.form-label {
+  padding-bottom: 4px;
+}
+
+.form-text-box {
+  border: 0;
+  border-radius: 2px;
+  height: 30px;
+}
+
+.form-text-area {
+  resize: vertical;
+  border: 0;
+  border-radius: 2px;
+  height: 60px;
+  min-height: 30px;
+  max-height: 100px;
+}
+
+.submission-group {
+  display: flex;
+  align-items: center;
+}
+
+.message {
+  color: red;
+  padding-left: 10px;
+}
+
+.form-button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 6px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.preferences {
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+}
+
+.preferences-heading {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.tri-style {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}

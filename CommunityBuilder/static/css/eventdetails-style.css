@@ -1,0 +1,112 @@
+img {
+    max-height: 70px;
+  }
+
+.logo-title{
+display: flex;
+align-items: center;
+margin-left: 20px;
+}
+
+.logo-title div {
+margin-left: 10px;
+font-size: 30px;
+}
+
+.event-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+.header-links {
+display: flex;
+justify-content: space-between;
+}
+
+.header-links a {
+margin-right: 35px;
+color: black;
+font-size: 20px;
+text-decoration:none;
+}
+
+.tablinks {
+    background-color: #fff;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: background-color 0.3s;
+}
+
+/* Style the tab content (and hide it by default) */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Style when a tab is active */
+.tablinks.active {
+    background-color: #ccc;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.event-details-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.event-details-content {
+    padding: 20px;
+}
+
+.event-details-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.event-details-tab {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.event-details-tab.active {
+    border-bottom: 2px solid #333;
+}
+
+.event-details-comments-section,
+.event-details-people-section {
+    padding: 10px;
+}
+
+.event-details-comment {
+    padding: 5px 0;
+}
+
+.event-details-person {
+    display: inline-block;
+    margin: 5px;
+    padding: 2px 5px;
+    background-color: #eee;
+    border-radius: 2px;
+}
+
+
+

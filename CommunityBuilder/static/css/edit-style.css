@@ -1,0 +1,25 @@
+.form-text-box {
+    border:1px solid #444;
+    border-radius: 2px;
+    height: 30px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.form-text-area {
+    resize: none;
+    border:1px solid #444;
+    border-radius: 2px;
+    width: 200px;
+    height: 80px;
+    font-size: 14px;
+}
+
+.save-button {
+    border:1px solid #444;
+    color: #444;
+    background-color: white;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-top: 20px;
+}

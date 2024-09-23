@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# CommunityBuilderrun
+#
+# Automate creating database and starting local server
+#
+# Stephen Staid <skstaid@umich.edu>
+
+# Stop on errors
+# See https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -Eeuo pipefail
+
+# creates database if it does not already exist
+if [ ! -r "var/CommunityBuilder.sqlite3" ] 
+then
+  echo "Error: can't find database var/CommunityBuilder.sqlite3"
+  echo "Try: ./bin/CommunityBuilderDB create"
+  exit 1
+else
+  npx webpack
+  flask --app CommunityBuilder --debug run --host 0.0.0.0 --port 8000
+fi

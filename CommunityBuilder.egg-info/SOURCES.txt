@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+CommunityBuilder/__init__.py
+CommunityBuilder/config.py
+CommunityBuilder/model.py
+CommunityBuilder.egg-info/PKG-INFO
+CommunityBuilder.egg-info/SOURCES.txt
+CommunityBuilder.egg-info/dependency_links.txt
+CommunityBuilder.egg-info/requires.txt
+CommunityBuilder.egg-info/top_level.txt

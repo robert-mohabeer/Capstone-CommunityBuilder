@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CommunityBuilder</title>
+    <link rel="stylesheet" href="/static/css/home-style.css">
+  </head>
+
+  <body>
+      <div class="header">
+        <div class="logo-title">
+            <img src="/static/images/sun-logo.png" alt="sun logo" class="logo"/>
+            <div>Community Builder</div> 
+        </div>
+        <div id="create-account-box">
+            <form action="/accounts/?target=/" method="post" enctype="multipart/form-data">
+                Username: 
+                <br>
+                <input type="text" name="username" class="input-text-form" required/>
+                <br>
+                <br>
+                Full Name: 
+                <br>
+                <input type="text" name="fullname" class="input-text-form" required/>
+                <br>
+                <br>
+                Email: 
+                <br>
+                <input type="text" name="email" class="input-text-form" required/>
+                <br>
+                <br>
+                Profile Picture: 
+                <br>
+                <input type="file" name="filename" required/>
+                <br>
+                <br>
+                Password: 
+                <br>
+                <input type="password" name="password" class="input-text-form" required/>
+                <br>
+                <br>
+                Age: 
+                <br>
+                <input type="number" name="age" style="width:50px" class="input-text-form" required/>
+                <br>
+                <br>
+                Tell us about yourself: 
+                <br>
+                <input type="text" name="about_me" style="width:300px" class="input-text-form"/>
+                <br>
+                <br>
+                <input type="submit" name="signup" value="sign up"/>
+                <input type="hidden" name="operation" value="create"/>
+              </form>
+              <h2 id="already-have">
+                Already have an account?
+                <br>
+                <a href="{{ url_for('show_login') }}">Click here to login</a>
+              </h2>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CommunityBuilder</title>
+    <link rel="stylesheet" href="/static/css/home-style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossOrigin=""></script>
+  </head>
+  <body>
+    <!-- Plain old HTML and jinja2 nav bar goes here -->
+    <div class="header">
+        <div class="logo-title">
+            <a href="/"><img src="/static/images/sun-logo.png" alt="sun logo" class="logo"/></a>
+            <a class="header-title" href="/">Community Builder</a>
+        </div>
+        <div class="header-links">
+            <a id="home" href="/">Home</a> 
+            <a id="map-link" href="/map/">Map</a>
+            <a id="profile" href="/users/{{logname}}/">Profile</a>
+        </div>
+    </div>
+      <!-- here is where we divide the top from the main body content of the page -->
+    <br>
+    <br>
+  
+    <div id="reactEntry">
+      Loading ...
+    </div>
+    <!-- Load JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+  </body>
+</html>

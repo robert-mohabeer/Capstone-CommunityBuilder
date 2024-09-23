@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CommunityBuilder</title>
+    <link rel="stylesheet" href="/static/css/home-style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossOrigin=""></script>
+  </head>
+  <body>
+    <!-- Plain old HTML and jinja2 nav bar goes here -->
+    <div class="header">
+        <div class="logo-title">
+            <a href="/"><img src="/static/images/sun-logo.png" alt="sun logo" class="logo"/></a>
+            <a class="header-title" href="/">Community Builder</a>
+        </div>
+        <div class="header-links">
+            <a id="home" href="/">Home</a> 
+            <a id="map-link" href="/map/">Map</a>
+            <a id="profile" href="/users/{{logname}}/">Profile</a>
+        </div>
+    </div>
+      <!-- here is where we divide the top from the main body content of the page -->
+    <br>
+    <br>
+    <div id="user-outer-box">
+        <!-- src set to sun-logo for simplicity, just change to {{filename}} -->
+        <div id="user-intro">
+            <img id="user-img"
+            src="{{ url_for('show_image', filename= filename) }}" 
+            alt="{{filename}}"
+            style="width: 150px; height: 150px; border-radius: 15%;"
+            onerror="this.src='/static/images/default.png';"
+            /><h1 id="user-fullname">{{fullname}}</h1>
+        </div>
+        
+        {% if logname == username %}
+          <a id="edit-profile" href="/edit/{{username}}/">
+            <button class="edit-profile-button">Edit Profile</button>
+          </a>
+        {% endif %}
+            
+        <div id="user-info">
+          <h3>Username:</h3> 
+          <p>{{ username }}</p>
+          <h3>Email:</h3> 
+          <p>{{ email }}</p>
+          <h3>Age:</h3> 
+          <p>{{ age }}</p>
+          <h3>About Me:</h3> 
+          <p>{{ about_me }}</p>
+        </div>
+        <div id="user-events">
+          <h2>User's Events:</h2>
+          {% for event in events %}
+            <div class="event-detail">
+              <h3><a href="/event/{{ event.eventid }}">{{ event.title }}</a></h3>
+              <h4>Description:</h4>
+              <p>{{ event.description }}</p>
+              <h4>Date:</h4>
+              <p>{{ event.date }}</p>
+              <h4>Location:</h4>
+              <p>{{ event.location }}</p>
+              <h4>Address:</h4>
+              <p>{{ event.address }}</p>
+            </div>
+          {% endfor %}
+        </div>
+        
+        <br>
+        <br>
+        {% if logname == username %}
+          <div id="logout-box">
+              <a id="logout" href="{{ url_for('user_logout') }}">Logout</a> 
+          </div>
+        {% endif %}
+    </div>
+    <br>
+    <br>
+  </body>
+</html>

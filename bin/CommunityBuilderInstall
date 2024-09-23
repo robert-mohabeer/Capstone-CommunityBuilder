@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# CommunityBuilderdb
+#
+# Automate installing dependencies for creating CommunityBuilder web-server
+
+# stop on errors
+set -Eeuo pipefail
+set -x
+
+# creates python virtual enviroment and activates it
+python3 -m venv env
+source env/bin/activate
+
+# loads in python dependencies for backend
+pip install -r requirements.txt 
+pip install -e .
+
+# loads in frontend dependencies
+npm ci .
